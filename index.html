@@ -10,22 +10,20 @@
   </head>
   <body>
     <main class="shell">
-      <header><div class="eyes"><i></i><i></i></div><strong>01</strong><span id="connection">Ollama Cloud</span></header>
-      <section id="welcome" class="card">
-        <h1>Sync with your 01</h1>
-        <p>Your phone uses Ollama Cloud for replies. When your computer’s 01 is connected, chats and settings also sync with it. It cannot control your computer.</p>
-        <label>01 server address<input id="server-url" inputmode="url" placeholder="https://your-01-server.example"></label>
-        <label>Pairing code<input id="pairing-code" inputmode="numeric" autocomplete="one-time-code" placeholder="Code shown by 01"></label>
-        <button id="pair">Sync this iPhone</button>
-        <small>Ollama Cloud handles phone replies. If your computer’s 01 is offline, the phone simply cannot sync until it comes back.</small>
-      </section>
-      <section id="chat" class="hidden">
-        <div id="messages" aria-live="polite"></div>
+      <header><div class="eyes"><i></i><i></i></div><strong>01</strong><button id="settings-button" class="icon-button" aria-label="Connection settings">•••</button><span id="connection">Ollama Cloud</span></header>
+      <section id="chat">
+        <div id="messages" aria-live="polite"><div class="intro"><div class="large-eyes"><i></i><i></i></div><h1>Hi, I’m 01.</h1><p>Your personal Ollama Cloud chat. No computer connection or sync is needed.</p></div></div>
         <form id="composer"><input id="message" autocomplete="off" placeholder="Message 01"><button>Send</button></form>
       </section>
       <section class="card settings">
-        <button id="forget" class="quiet">Disconnect this iPhone</button>
-        <p>Sync includes conversations and preferences only. The mobile app never has mouse, keyboard, screen, app, file, or command access on your PC.</p>
+        <button id="clear-chat" class="quiet">Delete this chat</button>
+        <p>01 Mobile is chat-only. It cannot see or control your computer.</p>
+      </section>
+      <section id="connection-settings" class="card settings hidden">
+        <h2>Connect to 01 Cloud</h2>
+        <label>01 Cloud server<input id="server-url" inputmode="url" placeholder="https://01-mobile-cloud.onrender.com"></label>
+        <label>Access key<input id="access-key" type="password" autocomplete="off" placeholder="From your Render settings"></label>
+        <button id="save-connection">Save connection</button>
       </section>
     </main>
     <script src="app.js"></script>
